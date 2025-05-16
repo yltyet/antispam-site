@@ -3,105 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>网络防炸知识大全 | Network Defense Knowledge</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #005f99;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    .section {
-      background: white;
-      padding: 15px 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
-      padding-bottom: 20px;
-    }
-  </style>
+  <title>加载中...</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1 id="title"></h1>
+  <nav id="nav"></nav>
 
   <div class="section">
-    <h2 id="section1-title"></h2>
-    <p id="section1-content"></p>
-  </div>
-
-  <div class="section">
-    <h2 id="section2-title"></h2>
-    <ul id="section2-list"></ul>
+    <h1 id="title"></h1>
+    <p id="intro"></p>
   </div>
 
   <footer id="footer"></footer>
 
+  <script src="js/lang.js"></script>
   <script>
-    // 中英文内容数据
-    const content = {
-      zh: {
-        title: "网络防炸知识大全",
-        section1Title: "什么是网络防炸？",
-        section1Content: "网络防炸是指通过各种技术和策略，保护网络免受恶意攻击，尤其是分布式拒绝服务攻击（DDoS）等，确保网络服务的稳定和安全。",
-        section2Title: "常见网络攻击类型",
-        section2List: [
-          "DDoS攻击：通过大量请求淹没目标服务器，导致服务瘫痪。",
-          "SQL注入：利用漏洞向数据库注入恶意代码，窃取或破坏数据。",
-          "跨站脚本攻击（XSS）：在网页中注入恶意脚本，窃取用户信息或劫持会话。",
-          "钓鱼攻击：伪装成可信网站骗取用户敏感信息。"
-        ],
-        footer: "© 2025 网络防炸知识大全"
-      },
-      en: {
-        title: "Network Defense Knowledge",
-        section1Title: "What is Network Defense?",
-        section1Content: "Network defense refers to the use of various technologies and strategies to protect networks from malicious attacks, especially Distributed Denial of Service (DDoS) attacks, ensuring the stability and security of network services.",
-        section2Title: "Common Network Attack Types",
-        section2List: [
-          "DDoS attacks: Overwhelm target servers with massive requests, causing service outages.",
-          "SQL Injection: Exploiting vulnerabilities to inject malicious code into databases, stealing or damaging data.",
-          "Cross-Site Scripting (XSS): Injecting malicious scripts into web pages to steal user info or hijack sessions.",
-          "Phishing: Pretending to be trusted sites to steal sensitive user information."
-        ],
-        footer: "© 2025 Network Defense Knowledge"
-      }
-    };
-
-    // 获取浏览器语言，默认中文
-    const userLang = navigator.language || navigator.userLanguage;
-    const lang = userLang.startsWith('en') ? 'en' : 'zh';
-
-    // 填充内容
-    document.getElementById('title').textContent = content[lang].title;
-    document.getElementById('section1-title').textContent = content[lang].section1Title;
-    document.getElementById('section1-content').textContent = content[lang].section1Content;
-    document.getElementById('section2-title').textContent = content[lang].section2Title;
-
-    const listEl = document.getElementById('section2-list');
-    listEl.innerHTML = '';
-    content[lang].section2List.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      listEl.appendChild(li);
-    });
-
-    document.getElementById('footer').textContent = content[lang].footer;
+    const content = initPage('index');
+    document.getElementById('title').textContent = content.title;
+    document.getElementById('intro').textContent = content.sections.intro;
+    document.getElementById('footer').textContent = content.footer;
   </script>
 </body>
 </html>
