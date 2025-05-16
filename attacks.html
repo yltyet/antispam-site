@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>加载中...</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+
+  <div class="section">
+    <h1 id="title"></h1>
+    <ul id="attack-list"></ul>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="js/lang.js"></script>
+  <script>
+    // 扩展内容数据
+    contentData.attacks = {
+      zh: {
+        title: "常见网络攻击类型",
+        nav: contentData.index.zh.nav,
+        attacks: [
+          "DDoS攻击：通过大量请求淹没目标服务器，导致服务瘫痪。",
+          "SQL注入：利用漏洞向数据库注入恶意代码，窃取或破坏数据。",
+          "跨站脚本攻击（XSS）：在网页中注入恶意脚本，窃取用户信息或劫持会话。",
+          "钓鱼攻击：伪装成可信网站骗取用户敏感信息。"
+        ],
+        footer: "© 2025 网络防炸知识大全"
+      },
+      en: {
+        title: "Common Network Attack Types",
+        nav: contentData.index.en.nav,
+        attacks: [
+          "DDoS attacks: Overwhelm target servers with massive requests, causing service outages.",
+          "SQL Injection: Exploiting vulnerabilities to inject malicious code into databases, stealing or damaging data.",
+          "Cross-Site Scripting (XSS): Injecting malicious scripts into web pages to steal user info or hijack sessions.",
+          "Phishing: Pretending to be trusted sites to steal sensitive user information."
+        ],
+        footer: "© 2025 Network Defense Knowledge"
+      }
+    };
+
+    const content = initPage('attacks');
+    document.getElementById('title').textContent = content.title;
+    const ul = document.getElementById('attack-list');
+    ul.innerHTML = '';
+    content.attacks.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    document.getElementById('footer').textContent = content.footer;
+  </script>
+</body>
+</html>
