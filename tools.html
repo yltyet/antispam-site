@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>加载中...</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+
+  <div class="section">
+    <h1 id="title"></h1>
+    <ul id="tools-list"></ul>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="js/lang.js"></script>
+  <script>
+    contentData.tools = {
+      zh: {
+        title: "实用工具推荐",
+        nav: contentData.index.zh.nav,
+        tools: [
+          "Cloudflare - 提供DDoS防护和CDN服务。",
+          "Akamai - 全球领先的内容分发和安全服务提供商。",
+          "Snort - 开源入侵检测系统。",
+          "Wireshark - 网络协议分析工具。"
+        ],
+        footer: "© 2025 网络防炸知识大全"
+      },
+      en: {
+        title: "Recommended Tools",
+        nav: contentData.index.en.nav,
+        tools: [
+          "Cloudflare - Provides DDoS protection and CDN services.",
+          "Akamai - Leading global content delivery and security provider.",
+          "Snort - Open-source intrusion detection system.",
+          "Wireshark - Network protocol analyzer tool."
+        ],
+        footer: "© 2025 Network Defense Knowledge"
+      }
+    };
+
+    const content = initPage('tools');
+    document.getElementById('title').textContent = content.title;
+    const ul = document.getElementById('tools-list');
+    ul.innerHTML = '';
+    content.tools.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    document.getElementById('footer').textContent = content.footer;
+  </script>
+</body>
+</html>
