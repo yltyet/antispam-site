@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>加载中...</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+
+  <div class="section">
+    <h1 id="title"></h1>
+    <ul id="practices-list"></ul>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="js/lang.js"></script>
+  <script>
+    contentData['best-practices'] = {
+      zh: {
+        title: "网络防炸最佳实践",
+        nav: contentData.index.zh.nav,
+        practices: [
+          "定期更新系统和软件，修补安全漏洞。",
+          "使用强密码和多因素认证。",
+          "备份重要数据，防止数据丢失。",
+          "教育员工和用户，提高安全意识。",
+          "制定应急响应计划，快速应对攻击。"
+        ],
+        footer: "© 2025 网络防炸知识大全"
+      },
+      en: {
+        title: "Best Practices for Network Defense",
+        nav: contentData.index.en.nav,
+        practices: [
+          "Regularly update systems and software to patch security vulnerabilities.",
+          "Use strong passwords and multi-factor authentication.",
+          "Backup important data to prevent loss.",
+          "Educate employees and users to raise security awareness.",
+          "Develop incident response plans to quickly handle attacks."
+        ],
+        footer: "© 2025 Network Defense Knowledge"
+      }
+    };
+
+    const content = initPage('best-practices');
+    document.getElementById('title').textContent = content.title;
+    const ul = document.getElementById('practices-list');
+    ul.innerHTML = '';
+    content.practices.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    document.getElementById('footer').textContent = content.footer;
+  </script>
+</body>
+</html>
