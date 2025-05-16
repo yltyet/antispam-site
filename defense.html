@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>加载中...</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+
+  <div class="section">
+    <h1 id="title"></h1>
+    <ul id="defense-list"></ul>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="js/lang.js"></script>
+  <script>
+    contentData.defense = {
+      zh: {
+        title: "网络防炸常见措施",
+        nav: contentData.index.zh.nav,
+        defenses: [
+          "防火墙：过滤恶意流量，阻止未授权访问。",
+          "流量监控：实时监控网络流量，及时发现异常。",
+          "访问控制：限制用户权限，防止非法操作。",
+          "DDoS防护服务：使用云端或硬件设备缓解攻击。",
+          "内容分发网络（CDN）：分散流量压力，提高抗攻击能力。"
+        ],
+        footer: "© 2025 网络防炸知识大全"
+      },
+      en: {
+        title: "Common Network Defense Measures",
+        nav: contentData.index.en.nav,
+        defenses: [
+          "Firewall: Filters malicious traffic and blocks unauthorized access.",
+          "Traffic Monitoring: Real-time monitoring of network traffic to detect anomalies promptly.",
+          "Access Control: Restricts user permissions to prevent unauthorized actions.",
+          "DDoS Protection Services: Uses cloud or hardware solutions to mitigate attacks.",
+          "Content Delivery Network (CDN): Distributes traffic load to improve resistance to attacks."
+        ],
+        footer: "© 2025 Network Defense Knowledge"
+      }
+    };
+
+    const content = initPage('defense');
+    document.getElementById('title').textContent = content.title;
+    const ul = document.getElementById('defense-list');
+    ul.innerHTML = '';
+    content.defenses.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    document.getElementById('footer').textContent = content.footer;
+  </script>
+</body>
+</html>
