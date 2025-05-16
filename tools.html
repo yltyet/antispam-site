@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>加载中...</title>
+  <title>实用工具推荐 - Antispam Site</title>
+  <meta name="description" content="推荐多款实用的网络安全工具，帮助用户提升防护能力。" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
     .tool {
@@ -18,7 +19,7 @@
       margin-bottom: 10px;
     }
     .tool img {
-      max-width: 100%;
+      max-width: 150px;
       border-radius: 6px;
       margin: 10px 0;
     }
@@ -48,15 +49,16 @@
   </style>
 </head>
 <body>
-  <nav id="nav"></nav>
+  <nav id="nav" role="navigation"></nav>
 
-  <div class="section">
-    <h1 id="title"></h1>
+  <main>
+    <article class="section">
+      <h1 id="title"></h1>
+      <div id="tools-container"></div>
+    </article>
+  </main>
 
-    <div id="tools-container"></div>
-  </div>
-
-  <footer id="footer"></footer>
+  <footer role="contentinfo" id="footer"></footer>
 
   <script src="js/lang.js"></script>
   <script>
@@ -68,7 +70,7 @@
           {
             name: "Cloudflare",
             intro: "Cloudflare 是一个提供网站安全和加速服务的平台，能有效防止DDoS攻击。",
-            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cloudflare_logo.svg/2560px-Cloudflare_logo.svg.png",
+            img: "images/cloudflare-logo.png",
             steps: [
               "访问 https://www.cloudflare.com/ 并注册一个账号。",
               "添加你的网站域名到 Cloudflare。",
@@ -84,7 +86,7 @@
           {
             name: "Wireshark",
             intro: "Wireshark 是一款网络协议分析工具，可以帮助你查看网络数据包，发现异常流量。",
-            img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Wireshark_Logo.png",
+            img: "images/wireshark-logo.png",
             steps: [
               "访问 https://www.wireshark.org/ 下载并安装软件。",
               "打开 Wireshark，选择你正在使用的网络接口开始抓包。",
@@ -100,7 +102,7 @@
           {
             name: "Snort",
             intro: "Snort 是开源的入侵检测系统，可以实时监控网络流量并报警。",
-            img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Snort_logo.png",
+            img: "images/snort-logo.png",
             steps: [
               "访问 https://www.snort.org/ 下载适合你系统的版本。",
               "按照官方文档安装并配置 Snort。",
@@ -123,7 +125,7 @@
           {
             name: "Cloudflare",
             intro: "Cloudflare is a platform that provides website security and acceleration services, effectively preventing DDoS attacks.",
-            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cloudflare_logo.svg/2560px-Cloudflare_logo.svg.png",
+            img: "images/cloudflare-logo.png",
             steps: [
               "Visit https://www.cloudflare.com/ and sign up for an account.",
               "Add your website domain to Cloudflare.",
@@ -139,7 +141,7 @@
           {
             name: "Wireshark",
             intro: "Wireshark is a network protocol analyzer that helps you view network packets and detect abnormal traffic.",
-            img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Wireshark_Logo.png",
+            img: "images/wireshark-logo.png",
             steps: [
               "Visit https://www.wireshark.org/ to download and install the software.",
               "Open Wireshark and select your active network interface to start capturing packets.",
@@ -155,7 +157,7 @@
           {
             name: "Snort",
             intro: "Snort is an open-source intrusion detection system that monitors network traffic and alerts in real-time.",
-            img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Snort_logo.png",
+            img: "images/snort-logo.png",
             steps: [
               "Visit https://www.snort.org/ to download the version suitable for your system.",
               "Install and configure Snort according to the official documentation.",
