@@ -1,3 +1,4 @@
+/* 之前给你的样式，包含响应式和美化 */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 900px;
@@ -60,7 +61,7 @@ footer {
   margin-bottom: 10px;
 }
 .tool img {
-  max-width: 100%;
+  max-width: 150px;
   border-radius: 6px;
   margin: 10px 0;
 }
