@@ -21,12 +21,6 @@
       list-style-type: disc;
       margin-left: 20px;
     }
-    code {
-      background: #eee;
-      padding: 2px 5px;
-      border-radius: 3px;
-      font-family: monospace;
-    }
     .section {
       background: white;
       padding: 15px 20px;
@@ -44,73 +38,70 @@
   </style>
 </head>
 <body>
-  <h1>网络防炸知识大全abc | Network Defense Knowledge</h1>
+  <h1 id="title"></h1>
 
   <div class="section">
-    <h2>什么是网络防炸？ | What is Network Defense?</h2>
-    <p>网络防炸是指通过各种技术和策略，保护网络免受恶意攻击，尤其是分布式拒绝服务攻击（DDoS）等，确保网络服务的稳定和安全。</p>
-    <p>Network defense refers to the use of various technologies and strategies to protect networks from malicious attacks, especially Distributed Denial of Service (DDoS) attacks, ensuring the stability and security of network services.</p>
+    <h2 id="section1-title"></h2>
+    <p id="section1-content"></p>
   </div>
 
   <div class="section">
-    <h2>常见网络攻击类型 | Common Network Attack Types</h2>
-    <ul>
-      <li><strong>DDoS攻击 (Distributed Denial of Service):</strong> 通过大量请求淹没目标服务器，导致服务瘫痪。<br>
-          Distributed Denial of Service attacks overwhelm target servers with massive requests, causing service outages.</li>
-      <li><strong>SQL注入 (SQL Injection):</strong> 利用漏洞向数据库注入恶意代码，窃取或破坏数据。<br>
-          Exploiting vulnerabilities to inject malicious code into databases, stealing or damaging data.</li>
-      <li><strong>跨站脚本攻击 (XSS):</strong> 在网页中注入恶意脚本，窃取用户信息或劫持会话。<br>
-          Injecting malicious scripts into web pages to steal user info or hijack sessions.</li>
-      <li><strong>钓鱼攻击 (Phishing):</strong> 伪装成可信网站骗取用户敏感信息。<br>
-          Pretending to be trusted sites to steal sensitive user information.</li>
-    </ul>
+    <h2 id="section2-title"></h2>
+    <ul id="section2-list"></ul>
   </div>
 
-  <div class="section">
-    <h2>网络防炸常见措施 | Common Network Defense Measures</h2>
-    <ul>
-      <li><strong>防火墙 (Firewall):</strong> 过滤恶意流量，阻止未授权访问。<br>
-          Filters malicious traffic and blocks unauthorized access.</li>
-      <li><strong>流量监控 (Traffic Monitoring):</strong> 实时监控网络流量，及时发现异常。<br>
-          Real-time monitoring of network traffic to detect anomalies promptly.</li>
-      <li><strong>访问控制 (Access Control):</strong> 限制用户权限，防止非法操作。<br>
-          Restricts user permissions to prevent unauthorized actions.</li>
-      <li><strong>DDoS防护服务 (DDoS Protection Services):</strong> 使用云端或硬件设备缓解攻击。<br>
-          Uses cloud or hardware solutions to mitigate attacks.</li>
-      <li><strong>内容分发网络 (CDN):</strong> 分散流量压力，提高抗攻击能力。<br>
-          Distributes traffic load to improve resistance to attacks.</li>
-    </ul>
-  </div>
+  <footer id="footer"></footer>
 
-  <div class="section">
-    <h2>实用工具推荐 | Recommended Tools</h2>
-    <ul>
-      <li><a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a> - 提供DDoS防护和CDN服务。<br>
-          Provides DDoS protection and CDN services.</li>
-      <li><a href="https://www.akamai.com/" target="_blank" rel="noopener noreferrer">Akamai</a> - 全球领先的内容分发和安全服务提供商。<br>
-          Leading global content delivery and security provider.</li>
-      <li><a href="https://www.snort.org/" target="_blank" rel="noopener noreferrer">Snort</a> - 开源入侵检测系统。<br>
-          Open-source intrusion detection system.</li>
-      <li><a href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer">Wireshark</a> - 网络协议分析工具。<br>
-          Network protocol analyzer tool.</li>
-    </ul>
-  </div>
+  <script>
+    // 中英文内容数据
+    const content = {
+      zh: {
+        title: "网络防炸知识大全",
+        section1Title: "什么是网络防炸？",
+        section1Content: "网络防炸是指通过各种技术和策略，保护网络免受恶意攻击，尤其是分布式拒绝服务攻击（DDoS）等，确保网络服务的稳定和安全。",
+        section2Title: "常见网络攻击类型",
+        section2List: [
+          "DDoS攻击：通过大量请求淹没目标服务器，导致服务瘫痪。",
+          "SQL注入：利用漏洞向数据库注入恶意代码，窃取或破坏数据。",
+          "跨站脚本攻击（XSS）：在网页中注入恶意脚本，窃取用户信息或劫持会话。",
+          "钓鱼攻击：伪装成可信网站骗取用户敏感信息。"
+        ],
+        footer: "© 2025 网络防炸知识大全"
+      },
+      en: {
+        title: "Network Defense Knowledge",
+        section1Title: "What is Network Defense?",
+        section1Content: "Network defense refers to the use of various technologies and strategies to protect networks from malicious attacks, especially Distributed Denial of Service (DDoS) attacks, ensuring the stability and security of network services.",
+        section2Title: "Common Network Attack Types",
+        section2List: [
+          "DDoS attacks: Overwhelm target servers with massive requests, causing service outages.",
+          "SQL Injection: Exploiting vulnerabilities to inject malicious code into databases, stealing or damaging data.",
+          "Cross-Site Scripting (XSS): Injecting malicious scripts into web pages to steal user info or hijack sessions.",
+          "Phishing: Pretending to be trusted sites to steal sensitive user information."
+        ],
+        footer: "© 2025 Network Defense Knowledge"
+      }
+    };
 
-  <div class="section">
-    <h2>网络防炸最佳实践 | Best Practices for Network Defense</h2>
-    <ul>
-      <li>定期更新系统和软件，修补安全漏洞。<br>Regularly update systems and software to patch security vulnerabilities.</li>
-      <li>使用强密码和多因素认证。<br>Use strong passwords and multi-factor authentication.</li>
-      <li>备份重要数据，防止数据丢失。<br>Backup important data to prevent loss.</li>
-      <li>教育员工和用户，提高安全意识。<br>Educate employees and users to raise security awareness.</li>
-      <li>制定应急响应计划，快速应对攻击。<br>Develop incident response plans to quickly handle attacks.</li>
-    </ul>
-  </div>
+    // 获取浏览器语言，默认中文
+    const userLang = navigator.language || navigator.userLanguage;
+    const lang = userLang.startsWith('en') ? 'en' : 'zh';
 
-  <footer>
-    <p>© 2025 网络防炸知识大全 | Network Defense Knowledge</p>
-  </footer>
+    // 填充内容
+    document.getElementById('title').textContent = content[lang].title;
+    document.getElementById('section1-title').textContent = content[lang].section1Title;
+    document.getElementById('section1-content').textContent = content[lang].section1Content;
+    document.getElementById('section2-title').textContent = content[lang].section2Title;
+
+    const listEl = document.getElementById('section2-list');
+    listEl.innerHTML = '';
+    content[lang].section2List.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      listEl.appendChild(li);
+    });
+
+    document.getElementById('footer').textContent = content[lang].footer;
+  </script>
 </body>
 </html>
-
-如果你想要我帮你写更复杂的交互功能，或者做成多页面网站，也可以告诉我！
