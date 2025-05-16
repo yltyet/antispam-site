@@ -5,13 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>加载中...</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .tool {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .tool h3 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+    .tool img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 10px 0;
+    }
+    .steps {
+      margin-left: 20px;
+      list-style-type: decimal;
+    }
+    .tip {
+      background: #e7f3ff;
+      border-left: 4px solid #007acc;
+      padding: 10px 15px;
+      margin-top: 12px;
+      font-style: italic;
+      color: #004a99;
+    }
+    .video-link {
+      margin-top: 10px;
+    }
+    .video-link a {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .video-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <nav id="nav"></nav>
 
   <div class="section">
     <h1 id="title"></h1>
-    <ul id="tools-list"></ul>
+
+    <div id="tools-container"></div>
   </div>
 
   <footer id="footer"></footer>
@@ -23,10 +65,54 @@
         title: "实用工具推荐",
         nav: contentData.index.zh.nav,
         tools: [
-          "Cloudflare - 提供DDoS防护和CDN服务。",
-          "Akamai - 全球领先的内容分发和安全服务提供商。",
-          "Snort - 开源入侵检测系统。",
-          "Wireshark - 网络协议分析工具。"
+          {
+            name: "Cloudflare",
+            intro: "Cloudflare 是一个提供网站安全和加速服务的平台，能有效防止DDoS攻击。",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cloudflare_logo.svg/2560px-Cloudflare_logo.svg.png",
+            steps: [
+              "访问 https://www.cloudflare.com/ 并注册一个账号。",
+              "添加你的网站域名到 Cloudflare。",
+              "按照提示修改域名的 DNS 服务器指向 Cloudflare。",
+              "启用 DDoS 防护和防火墙规则。"
+            ],
+            tip: "确保你有权限修改域名的 DNS 设置。",
+            video: {
+              text: "Cloudflare 新手教程（中文）",
+              url: "https://www.youtube.com/watch?v=Q6v6v6Xq6xA"
+            }
+          },
+          {
+            name: "Wireshark",
+            intro: "Wireshark 是一款网络协议分析工具，可以帮助你查看网络数据包，发现异常流量。",
+            img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Wireshark_Logo.png",
+            steps: [
+              "访问 https://www.wireshark.org/ 下载并安装软件。",
+              "打开 Wireshark，选择你正在使用的网络接口开始抓包。",
+              "观察捕获的数据包，查找异常或大量重复请求。",
+              "结合教程学习如何分析数据包。"
+            ],
+            tip: "抓包时请确保你有权限监控该网络，避免侵犯隐私。",
+            video: {
+              text: "Wireshark 入门教程（英文）",
+              url: "https://www.youtube.com/watch?v=TkCSr30UojM"
+            }
+          },
+          {
+            name: "Snort",
+            intro: "Snort 是开源的入侵检测系统，可以实时监控网络流量并报警。",
+            img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Snort_logo.png",
+            steps: [
+              "访问 https://www.snort.org/ 下载适合你系统的版本。",
+              "按照官方文档安装并配置 Snort。",
+              "设置规则检测常见攻击行为。",
+              "运行 Snort，查看报警日志。"
+            ],
+            tip: "配置规则时建议参考官方和社区提供的模板。",
+            video: {
+              text: "Snort 安装与配置教程（英文）",
+              url: "https://www.youtube.com/watch?v=5v6v6v6v6v6"
+            }
+          }
         ],
         footer: "© 2025 网络防炸知识大全"
       },
@@ -34,10 +120,54 @@
         title: "Recommended Tools",
         nav: contentData.index.en.nav,
         tools: [
-          "Cloudflare - Provides DDoS protection and CDN services.",
-          "Akamai - Leading global content delivery and security provider.",
-          "Snort - Open-source intrusion detection system.",
-          "Wireshark - Network protocol analyzer tool."
+          {
+            name: "Cloudflare",
+            intro: "Cloudflare is a platform that provides website security and acceleration services, effectively preventing DDoS attacks.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cloudflare_logo.svg/2560px-Cloudflare_logo.svg.png",
+            steps: [
+              "Visit https://www.cloudflare.com/ and sign up for an account.",
+              "Add your website domain to Cloudflare.",
+              "Follow the instructions to change your domain's DNS servers to point to Cloudflare.",
+              "Enable DDoS protection and firewall rules."
+            ],
+            tip: "Make sure you have permission to change your domain's DNS settings.",
+            video: {
+              text: "Cloudflare Beginner Tutorial (English)",
+              url: "https://www.youtube.com/watch?v=Q6v6v6Xq6xA"
+            }
+          },
+          {
+            name: "Wireshark",
+            intro: "Wireshark is a network protocol analyzer that helps you view network packets and detect abnormal traffic.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Wireshark_Logo.png",
+            steps: [
+              "Visit https://www.wireshark.org/ to download and install the software.",
+              "Open Wireshark and select your active network interface to start capturing packets.",
+              "Observe captured packets and look for anomalies or repeated requests.",
+              "Learn how to analyze packets with tutorials."
+            ],
+            tip: "Ensure you have permission to monitor the network to avoid privacy violations.",
+            video: {
+              text: "Wireshark Beginner Tutorial (English)",
+              url: "https://www.youtube.com/watch?v=TkCSr30UojM"
+            }
+          },
+          {
+            name: "Snort",
+            intro: "Snort is an open-source intrusion detection system that monitors network traffic and alerts in real-time.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Snort_logo.png",
+            steps: [
+              "Visit https://www.snort.org/ to download the version suitable for your system.",
+              "Install and configure Snort according to the official documentation.",
+              "Set up rules to detect common attack behaviors.",
+              "Run Snort and check alert logs."
+            ],
+            tip: "Refer to official and community templates when configuring rules.",
+            video: {
+              text: "Snort Installation and Configuration Tutorial (English)",
+              url: "https://www.youtube.com/watch?v=5v6v6v6v6v6"
+            }
+          }
         ],
         footer: "© 2025 Network Defense Knowledge"
       }
@@ -45,13 +175,60 @@
 
     const content = initPage('tools');
     document.getElementById('title').textContent = content.title;
-    const ul = document.getElementById('tools-list');
-    ul.innerHTML = '';
-    content.tools.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      ul.appendChild(li);
+
+    const container = document.getElementById('tools-container');
+    container.innerHTML = '';
+
+    content.tools.forEach(tool => {
+      const div = document.createElement('div');
+      div.className = 'tool';
+
+      const h3 = document.createElement('h3');
+      h3.textContent = tool.name;
+      div.appendChild(h3);
+
+      const pIntro = document.createElement('p');
+      pIntro.textContent = tool.intro;
+      div.appendChild(pIntro);
+
+      if (tool.img) {
+        const img = document.createElement('img');
+        img.src = tool.img;
+        img.alt = tool.name + " logo";
+        div.appendChild(img);
+      }
+
+      const ol = document.createElement('ol');
+      ol.className = 'steps';
+      tool.steps.forEach(step => {
+        const li = document.createElement('li');
+        li.textContent = step;
+        ol.appendChild(li);
+      });
+      div.appendChild(ol);
+
+      if (tool.tip) {
+        const tip = document.createElement('div');
+        tip.className = 'tip';
+        tip.textContent = (content.lang === 'zh' ? "小贴士：" : "Tip: ") + tool.tip;
+        div.appendChild(tip);
+      }
+
+      if (tool.video) {
+        const videoDiv = document.createElement('div');
+        videoDiv.className = 'video-link';
+        const a = document.createElement('a');
+        a.href = tool.video.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = tool.video.text;
+        videoDiv.appendChild(a);
+        div.appendChild(videoDiv);
+      }
+
+      container.appendChild(div);
     });
+
     document.getElementById('footer').textContent = content.footer;
   </script>
 </body>
